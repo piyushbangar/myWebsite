@@ -1,0 +1,210 @@
+{
+    "content": [
+        "Home",
+        "About",
+        "Services",
+        "Education", [
+            "Pages",
+            "Projects",
+            "Gallery",
+            "Testimonials"
+        ],
+        "Contact"
+    ],
+    "ids": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8"
+    ],
+    "greet": "Hi",
+    "name": "I am Piyush Bangar",
+    "designation": "Software Developer",
+    "description": "I am piyush bangar. Machine Learning is my major subject of interest. I have worked on 2 machine learning projects with python in which i have worked with different models including LSTM and Deep Neural Net.",
+    "hiddendescription": "And i m also awesome",
+    "avatar": {
+        "image": "../images/img1.png",
+        "width": 350,
+        "height": "auto"
+    },
+    "about": {
+        "heading": "About Me",
+        "avatar": "../images/transaparent.png",
+        "content": {
+            "heading": "Nulla Viverra Pharetra Sem, Eget Pulvinar Neque Pharetra Ac Int.",
+            "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat."
+        },
+        "skills": [{
+                "name": "C++",
+                "width": 90
+            },
+            {
+                "name": "Machine Learning",
+                "width": 50
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contact",
+        "address": {
+            "title": "Address Info",
+            "list": [{
+                    "title": "Email",
+                    "content": [
+                        "piyushbangar39@gmail.com",
+                        "piyush.bangar@proptiger.com"
+                    ]
+                },
+                {
+                    "title": "Phone",
+                    "content": [
+                        "8955885689",
+                        "9988776655"
+                    ]
+                },
+                {
+                    "title": "Address",
+                    "content": [
+                        "sector 40, Gurgaon"
+                    ]
+                }
+            ]
+        }
+    },
+    "services": {
+        "heading": "Services",
+        "content": [{
+                "img": "",
+                "title": "UI/UX Design",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+            },
+            {
+                "img": "",
+                "title": "Mobile Apps",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+            },
+            {
+                "img": "",
+                "title": "Web Developer",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+            },
+            {
+                "img": "",
+                "title": "Photoshop",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+            },
+            {
+                "img": "",
+                "title": "Software",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+            },
+            {
+                "img": "",
+                "title": "Graphic Design",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+            }
+        ]
+    },
+    "experience": {
+        "heading": "Experience",
+        "content": [{
+                "title": "UI/UX Design",
+                "year": "2007 - 2010",
+                "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
+            },
+            {
+                "title": "Web Developer",
+                "year": "2010 - 2013",
+                "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
+            },
+            {
+                "title": "Mobile Apps",
+                "year": "2013 - 2016",
+                "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
+            },
+            {
+                "title": "Software",
+                "year": "2016 - 2018",
+                "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
+            }
+        ]
+    },
+    "projects": [{
+            "img": "../images/stock-market2.jpg",
+            "title": "STOCK MARKET PREDICTION:",
+            "content": "A Machine Learning project to predict the 30th-day stock return using LSTM with Deep NeuralNet."
+        },
+        {
+            "img": "../images/waterbed.jpg",
+            "title": "WATER BED MAPPING",
+            "content": "Designing and building Remotely Operated Vehicle (ROV) for waterbed mapping of small water bodies using LiDAR."
+        },
+        {
+            "img": "../images/music-inst.jpg",
+            "title": "MUSIC INSTRUMENT DETECTION",
+            "content": "A Machine Learning Project to detect the instruments being played in an audio file."
+        },
+        {
+            "img": "../images/college-select.png",
+            "title": "COLLEGE SELECTION GUIDE:",
+            "content": "A website for an optimized and conclusive search for the best college for engineering aspirants using PHP and MySQL."
+        }
+    ],
+    "testimonial": {
+        "heading": "Testimonial",
+        "htmlcontent": "<i class='fa fa-quote-left'></i> <
+            div id = 'a1' >
+            <
+            div class = "left-img" >
+            <
+            img src = '../images/testimonial-left.jpg'
+        height = '200px'
+        width = '200px' >
+        <
+        /div> <
+        div class = 'right-content' > A website
+        for an optimized and conclusive search
+        for the best college
+        for engineering aspirants using PHP and MySQL. < /div> <
+        /div> <
+        div id = 'a2' >
+        <
+        img src = '../images/test-center.jpg'
+        width = '80%'
+        height = '250px' >
+        <
+        /div> <
+        div id = 'a3' >
+        <
+        div class = 'content' > A website
+        for an optimized and conclusive search
+        for the best college
+        for engineering aspirants using PHP and MySQL. < /div> <
+        /div>",
+        "content": [{
+                "img": "../images/testimonial-left.jpg",
+                "content": "A website for an optimized and conclusive search for the best college for engineering aspirants using PHP and MySQL."
+            },
+            {
+                "img": "../images/test-center.jpg"
+            },
+            {
+                "content": "A website for an optimized and conclusive search for the best college for engineering aspirants using PHP and MySQL."
+            }
+        ]
+    },
+
+    "gallery": [
+        "../images/clouds-cover.jpg",
+        "../images/code-quote.jpg",
+        "../images/college-select.png",
+        "../images/business.jpg",
+        "../images/code-screen.jpg",
+        "../images/blue-lemon.jpg",
+        "../images/music-instrument.jpg"
+    ]
+}
