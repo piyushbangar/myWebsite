@@ -9,9 +9,12 @@
     <meta name="keywords" content="Piyush Bangar's website">
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
 </head>
+
+
 <body>
-    <div class="container">
+<div class="container">
 
 <!-- -----HOME----- -->
         <div class="home" id="section1">
@@ -132,9 +135,7 @@
             <% for(var i=0; i<projects.length; i++) { %>
                 <% if(i%2!==0) { %>
                     <div class="img-top">
-                        <div class="img-top-img">
-                            <img src= "<%- projects[i].img %>">
-                        </div>
+                        <div class="img-top-img" style="background-image: url(<%- projects[i].img %>);background-repeat: no-repeat;background-size: cover;background-position: center;"></div>
                         <div class="img-top-content">
                             <h4><%= projects[i].title %></h4>
                             <p><%= projects[i].content %></p>
@@ -146,9 +147,7 @@
                             <h4><%= projects[i].title %></h4>
                             <p><%= projects[i].content %></p>
                         </div>
-                        <div class="img-bottom-img">
-                            <img src= "<%- projects[i].img %>">
-                        </div>
+                        <div class="img-bottom-img"  style="background-image: url(<%- projects[i].img %>);background-repeat: no-repeat;background-size: cover;background-position: center;"></div>
                     </div>
                 <% } %>
             <% } %>
@@ -163,31 +162,23 @@
         <% for(let i=0; i< gallery.length; i++) { %>
             <div class="container-one">
                 <% for(let j=0;j< 3 && i<gallery.length; j++ , i++) {   %>
-                    <img onclick="document.getElementById('id01').style.display='block'" id= "gallery-item-one" src="<%= gallery[i]%>">
-                    <div id="id01" class="modal">
-                    <div class="modal-content">
-                    <div class="container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                        <img src= "<%= gallery[i]%>">
-                    </div>
-                    </div>
-                    </div>
+                    <img onclick="imageShow(event)" id= "gallery-item-one" src="<%= gallery[i]%>">
                 <% } %>
             </div>
             <div class="container-two">
                 <% for(let j = 0; j< 3 && i<gallery.length; j++, i++) { %>
-                    <img onclick="document.getElementById('id01').style.display='block'" id= "gallery-item-two" src= "<%= gallery[i]%>">
-                    <div id="id01" class="modal">
-                    <div class="modal-content">
-                    <div class="container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                        <img src= "<%= gallery[i]%>">
-                    </div>
-                    </div>
-                    </div>
+                    <img onclick="imageShow(event)" id= "gallery-item-two" src= "<%= gallery[i]%>">
                 <% } %>
             </div>
         <% i--; } %>
+        </div>
+        <div id="id01" class="modal">
+        <div class="modal-content">
+        <div class="container">
+            <span onclick="hideModal()" id="modal-btn">&times;</span>
+            <img id="modal-image">
+        </div>
+        </div>
         </div>
 
     </div>
@@ -199,30 +190,9 @@
         <h3 class="heading"><%= testimonial.heading %></h3>
         <div class="outer-container">
             <div class="container">
-                <i class="fa fa-quote-left"></i>
-                <div id="a1">
-                    <div class="left-img">
-                        <img src="<%- testimonial.content[0].img%>" height= "200px" width= "200px">
-                    </div>
-                    <div class="right-content"><%= testimonial.content[0].content %></div>
-                </div>
-                <div id="a2">
-                    <img src="<%- testimonial.content[1].img%>" width = "80%" height= "250px">
-                </div>
-                <div id="a3">
-                    <div class="content"><%= testimonial.content[2].content%></div>
-                </div>
+                <%- testimonial.htmlcontent %>
             </div>
-        <div class="dots">
-            <% for(var i=0; i<testimonial.content.length; i++) { %>
-                <span onclick= "changeImgto()" class="dots"></span>
-            <% } %>
-        </div>
-        <div class="testimonialdots">
-            <span onclick= "changeImgto(0)" class="dot"></span> 
-            <span onclick= "changeImgto(1)" class="dot"></span>
-            <span onclick= "changeImgto(2)" class="dot"></span>
-        </div>
+            <%- testimonial.htmlids %>
         </div>
     </div>
 
@@ -251,16 +221,16 @@
                 <form action="#" method="post" action="/resume">
                 <div class="form-elem">
                     <label><i id="form-name" aria-hidden="true"></i> Name</label>
-                    <input type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                    <div class="clearfix"></div>
+                    <input type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required>
+                    
                     <label><i id="form-email" aria-hidden="true"></i>Email</label>
-                    <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-                    <div class="clearfix"></div>
+                    <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required>
+                    
                     <label><i id="form-phone" aria-hidden="true"></i>Phone</label>
-                    <input type="text" name="Phone" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}" required="">
-                    <div class="clearfix"></div>
+                    <input type="text" name="Phone" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}" required>
+                    
                     <label><i id="form-message" aria-hidden="true"></i>Message</label>
-                    <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+                    <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required>Message...</textarea>
                     <input type="submit" value="Submit" id="submit-form">
                 </div>
                 </form>
@@ -268,11 +238,11 @@
         </div>
     </div>    
 
+    
 
-    </div>
-
-
-    <<script src="../javascript/javascript.js"></script>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script src="../javascript/javascript.js"></script>
 
 </body>
 

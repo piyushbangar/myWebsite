@@ -6,7 +6,6 @@ body,
 html {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 body {
@@ -52,10 +51,11 @@ a {
     padding: 0;
     width: 100%;
     background-color: black;
-    opacity: 0.3;
+    opacity: 0.8;
     color: white;
     height: 3em;
     padding-top: 0.5em;
+    z-index: 4;
 }
 
 .navbar ul {
@@ -167,11 +167,6 @@ p {
     position: relative;
     font-size: 3em;
     font-weight: 500;
-    /* display: inline-block;
-    margin: 0 auto;
-    width: auto;
-    border-bottom: 2px solid #333333;
-    padding-bottom: 3px; */
 }
 
 .heading::after {
@@ -266,10 +261,7 @@ p {
 }
 
 .services {
-    /* margin-top: 15px; */
-    /* margin-bottom: 15px; */
     padding-top: 20px;
-    /* background-color: rgb(17, 16, 16); */
     background-image: url("../images/black-tex.jpg");
     color: #fff;
     padding-bottom: 40px;
@@ -496,16 +488,35 @@ p {
     height: 100%;
     overflow: auto;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4)
+    background-color: rgba(0, 0, 0, 0.473)
 }
 
 .modal-content {
     margin: auto;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.103);
     position: relative;
     padding: 0;
     outline: 0;
-    width: 600px
+    width: 600px;
+}
+
+.modal .container {
+    text-align: center;
+    position: relative;
+}
+
+#modal-image {
+    max-height: 400px;
+    width: auto;
+}
+
+#modal-btn {
+    padding: 3px 10px 3px 10px;
+    background-color: white;
+    color: black;
+    right: 5px;
+    top: 5px;
+    position: absolute;
 }
 
 .testimonial {
@@ -722,44 +733,297 @@ p {
     /* padding-left: 20px; */
 }
 
-
-/*
-.img-bottom-content,
-.img-bottom-img {
-    bottom: 0;
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: 2px solid gray;
+    outline: none;
+    background-color: whitesmoke;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 14px;
 }
 
-.projects img,
-{
-    height: 250px;
-    /* width: auto; */
-
-
-}
-*/
-/*.about {
-    background-image: url("../images/blog.jpg");
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-
+#myBtn:hover {
+    background-color: #555;
 }
 
-/* .corousel {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    overflow-y: hidden;
-    height: 50vw;
-    max-height: 100vh;
-    --n: 1;
-    width: 100%;
-    width: calc(var(--n)*100%);
-    transform: translate(calc(var(3, 0)/var(--n)*-100%));
-    img {
-        min-width: 100%;
-        width: 100%;
-        min-width: 100%;
-        wid
+@media (max-width: 420px) {
+    /* For Mobile Phones */
+    body {
+        line-height: 1;
+    }
+    .home {
+        padding-bottom: 20px;
+    }
+    .navbar ul li {
+        margin: 0px;
+        font-size: 0.8em;
+    }
+    .header-content {
+        padding-top: 80px;
+        width: auto;
+    }
+    .header-content h2 {
+        font-size: 30px;
+    }
+    .header-content h4 {
+        font-size: 18px;
+    }
+    .header-content p {
+        font-size: 0.9em;
+    }
+    #benefits {
+        font-size: 0.9em;
+    }
+    .header-content a {
+        font-size: 0.6em;
+        padding: 3px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .heading {
+        font-size: 2em;
+    }
+    .about .heading {
+        margin-top: 20px;
+    }
+    .about-content {
+        padding: 0px;
+        width: auto;
+    }
+    .about .content-box {
+        width: 80%;
+        height: auto;
+        margin-top: 0;
+        font-size: 0.9em;
+    }
+    .about .image-margin {
+        display: none;
+    }
+    .progress-bar {
+        width: 70%;
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    .content-box a {
+        padding: 10px;
+        width: 80px;
+        font-size: 0.6em;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 160px;
+        background-color: whitesmoke;
+        color: black;
+    }
+    .services {
+        padding-bottom: 40px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+    }
+    .servicedata {
+        padding: 5px;
+        width: 49%;
+        text-align: center;
+    }
+    .servicedata h3 {
+        font-size: 1em;
+    }
+    .servicedata p {
+        font-size: 0.7em;
+    }
+    .experience .left {
+        margin: 10px auto;
+    }
+    .experience p {
+        font-size: 0.7em;
+    }
+    .experience .content h4,
+    .experience .content h5 {
+        font-size: 0.8em;
+    }
+    .experience .content h4 {
+        margin-bottom: 10px;
+    }
+    .left .left-content {
+        margin-left: 0px;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    .left .left-box {
+        margin: 0;
+        display: inline-block;
+        width: 20%;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px 0px 40px 0px;
+    }
+    .right .right-content {
+        margin-right: 5px;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .right .right-box {
+        text-align: center;
+        padding: 10px 0px 38px 0px;
+    }
+    .modal-content {
+        width: auto;
+    }
+    .projects {
+        height: 800px;
+    }
+    .projects .content {
+        height: 800px;
+    }
+    .img-top,
+    .img-bottom {
+        height: 400px;
+        width: 49%;
+    }
+    .img-top-content,
+    .img-bottom-content {
+        padding-top: 40px;
+        height: 200px;
+    }
+    .img-top-img,
+    .img-bottom-img {
+        height: 200px;
+    }
+    .projects img {
+        height: 200px;
+        width: auto;
+    }
+    .testimonial {
+        padding-top: 15px;
+    }
+    .testimonial .content,
+    .testimonial .right-content {
+        font-size: 1em;
+    }
+    .contact {
+        padding-top: 1px;
+        padding-bottom: 30px;
+        margin: 0px;
+        background-size: contain;
+    }
+    .address-bottom {
+        padding: 0px;
+        padding-top: 20px;
+    }
+    .address {
+        margin: 0 25px;
+        width: 30%;
+    }
+    .address h4 {
+        font-size: 1.4em;
+    }
+    .address-head h5 {
+        font-size: 1em;
+    }
+    .address-value {
+        font-size: 0.7em;
+        width: auto;
+    }
+    .form-box {
+        margin: 0 30px;
+        width: 30%;
+    }
+    .form-box h4 {
+        font-size: 1.4em;
+    }
+    .form-elem {
+        font-size: 1em;
+        margin-top: 15px;
+        padding: 0;
+        line-height: 1.5;
+    }
+    .form-elem input {
+        width: 120%;
+        font-size: auto;
+    }
+    .form-elem textarea {
+        width: 120%;
+        font-size: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .about .content-box {
+        width: auto;
+        padding-top: 0;
+    }
+    .image-margin {
+        display: none;
+    }
+    .content-box a {
+        background-color: whitesmoke;
+        padding: 0;
+        color: black;
+        padding: 5px 0px;
+        width: 100px;
+        color: black;
+        margin-bottom: 300px;
+    }
+    .progress-bar {
+        width: 80%;
+    }
+    .servicedata {
+        width: 49%;
+        text-align: center;
+        padding-top: 0px;
+    }
+    .right .right-content {
+        margin-right: 23px;
+    }
+    .right .right-box {
+        padding: 30px 0px 51px 0px;
+    }
+    .left .left-box {
+        padding: 30px 0px 51px 0px;
+    }
+    .img-top,
+    .img-bottom {
+        height: 450px;
+        width: 24%;
+    }
+    .img-top-content,
+    .img-bottom-content {
+        padding-top: 40px;
+        height: 225px;
+    }
+    .img-top-img,
+    .img-bottom-img {
+        height: 225px;
+    }
+    .projects img {
+        height: 225px;
+        width: auto;
+    }
+    .address-bottom {
+        padding: 0px;
+    }
+    .address {
+        margin: 0px 20px;
+    }
+    .form-box {
+        margin: 0px 20px;
+    }
+    .form-elem {
+        padding: 0px;
+        margin-top: 10px;
+        line-height: 2;
+    }
+    #submit-form {
+        margin-left: 55%;
+    }
+}

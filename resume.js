@@ -4,7 +4,7 @@ var router = express.Router();
 const fetch = require('node-fetch');
 
 router.get('*', function(req, res, next) {
-    fetch("https://api.myjson.com/bins/11g7aw")
+    fetch("https://api.myjson.com/bins/13703s")
         .then((res) => res.json())
         .then(data => {
             res.render('website', data)

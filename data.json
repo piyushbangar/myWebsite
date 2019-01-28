@@ -110,25 +110,25 @@
         ]
     },
     "experience": {
-        "heading": "Experience",
+        "heading": "Education",
         "content": [{
-                "title": "UI/UX Design",
-                "year": "2007 - 2010",
+                "title": "Internship",
+                "year": "2019 - 2019",
                 "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
             },
             {
-                "title": "Web Developer",
-                "year": "2010 - 2013",
+                "title": "BE CSE",
+                "year": "2015 - 2019",
                 "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
             },
             {
-                "title": "Mobile Apps",
-                "year": "2013 - 2016",
+                "title": "12th",
+                "year": "2014",
                 "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
             },
             {
-                "title": "Software",
-                "year": "2016 - 2018",
+                "title": "10th",
+                "year": "2012",
                 "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
             }
         ]
@@ -156,55 +156,15 @@
     ],
     "testimonial": {
         "heading": "Testimonial",
-        "htmlcontent": "<i class='fa fa-quote-left'></i> <
-            div id = 'a1' >
-            <
-            div class = "left-img" >
-            <
-            img src = '../images/testimonial-left.jpg'
-        height = '200px'
-        width = '200px' >
-        <
-        /div> <
-        div class = 'right-content' > A website
-        for an optimized and conclusive search
-        for the best college
-        for engineering aspirants using PHP and MySQL. < /div> <
-        /div> <
-        div id = 'a2' >
-        <
-        img src = '../images/test-center.jpg'
-        width = '80%'
-        height = '250px' >
-        <
-        /div> <
-        div id = 'a3' >
-        <
-        div class = 'content' > A website
-        for an optimized and conclusive search
-        for the best college
-        for engineering aspirants using PHP and MySQL. < /div> <
-        /div>",
-        "content": [{
-                "img": "../images/testimonial-left.jpg",
-                "content": "A website for an optimized and conclusive search for the best college for engineering aspirants using PHP and MySQL."
-            },
-            {
-                "img": "../images/test-center.jpg"
-            },
-            {
-                "content": "A website for an optimized and conclusive search for the best college for engineering aspirants using PHP and MySQL."
-            }
-        ]
+        "htmlcontent": "<i class='fa fa-quote-left'></i>\n<div id='a1'>\n<div class='left-img'>\n<img src='../images/testimonial-left.jpg' height= '200px' width= '200px'>\n</div>\n<div class='right-content'>A website for an optimized and conclusive search for the best college for engineering aspirants using PHP and MySQL.</div>\n</div>\n<div id='a2'>\n<img src='../images/test-center.jpg' width = '80%' height= '250px'>\n</div>\n<div id='a3'>\n<div class='content'>A website for an optimized and conclusive search for the best college for engineering aspirants using PHP and MySQL.</div>\n</div>",
+        "htmlids": "<div class='testimonialdots'>\n<span onclick= 'changeImgto(0)' class='dot'></span>\n<span onclick= 'changeImgto(1)' class='dot'></span>\n<span onclick= 'changeImgto(2)' class='dot'></span>\n</div>"
     },
-
     "gallery": [
-        "../images/clouds-cover.jpg",
-        "../images/code-quote.jpg",
-        "../images/college-select.png",
-        "../images/business.jpg",
-        "../images/code-screen.jpg",
-        "../images/blue-lemon.jpg",
-        "../images/music-instrument.jpg"
+        "../images/g4.jpg",
+        "../images/g5.jpg",
+        "../images/g2.jpg",
+        "../images/g1.jpg",
+        "../images/g6.jpg",
+        "../images/g3.jpg"
     ]
 }
