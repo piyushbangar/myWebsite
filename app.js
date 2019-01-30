@@ -9,6 +9,7 @@ app.use('/css', express.static('css'));
 app.use('/images', express.static('images'));
 app.use('/javascript', express.static('javascript'));
 var fs = require('fs');
+const bp = require("body-parser");
 
 app.use('/resume', resumeroute)
 
@@ -20,18 +21,28 @@ app.get('/', function(req, res) {
 
 app.post('/resume', function(req, res) {
     const form = {
-        name: req.body.Name,
-        email: req.body.Email,
-        phone: req.body.Phone,
-        message: req.body.Message
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        message: req.body.message
     }
-    console.log(form);
-    fs.appendFile('mynewfile.txt', JSON.stringify(form), function(err) {
-        if (err) throw err;
-        console.log('Saved!');
-    });
+    if (!checkName(form.name)) {
+        res.json({ "success": "false", "error": "Enter Valid Name" });
+    } else if (!checkEmail(form.email)) {
+        res.json({ "success": "false", "error": "Enter Valid Email" });
+    } else if (!checkPhone(form.phone)) {
+        res.json({ "success": "false", "error": "Enter Valid Phone Number" });
+    } else {
+        fs.appendFile('mynewfile.txt', JSON.stringify(form), function(err) {
+            if (err) throw err;
+            console.log('Saved!');
+        });
+        res.json({ "success": "true" });
+    }
+});
+checkName = (name) => /^[a-zA-Z ]+$/.test(name);
+checkPhone = (phone) => /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phone);
+checkEmail = (email) => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 
-    res.redirect('/resume#section8');
-})
 
 app.listen(2121)
