@@ -12,7 +12,6 @@
 
 </head>
 
-
 <body>
 <div class="container">
 
@@ -21,17 +20,17 @@
         <div class="navbar">
             <ul>
                 <% var k=0; %>
-                <% for(var i=0; i<content.length; i++) { %>
-                    <% if(typeof content[i] === 'string') { %>
-                    <li><a href= "#<%- ids[k] %>"><%= content[i] %></a></li>
+                <% for(var i=0; i<home.content.length; i++) { %>
+                    <% if(typeof home.content[i] === 'string') { %>
+                    <li><a href= "#<%- home.ids[k] %>"><%= home.content[i] %></a></li>
                     <% k=k+1; %>
                     <% } %>
-                    <% if(typeof content[i] === 'object') { %>
-                    <li onclick="showhidenav()" id="pages-nav-item"><%= content[i][0] %>
+                    <% if(typeof home.content[i] === 'object') { %>
+                    <li onclick="showhidenav()" id="pages-nav-item"><%= home.content[i][0] %>
                     
                     <ul class="hidden-item" id="pages-nav">
-                        <% for(var j=1; j<content[i].length; j++) { %>
-                            <li><a href= "#<%- ids[k] %>"><%= content[i][j] %></a></li>
+                        <% for(var j=1; j<home.content[i].length; j++) { %>
+                            <li><a href= "#<%- home.ids[k] %>"><%= home.content[i][j] %></a></li>
                             <% k=k+1; %>
                         <% } %>
                     </ul>
@@ -41,17 +40,11 @@
             </ul>
         </div>
         <div class="header-content">
-            <h4><%= greet %></h4>
-            <h2><%= name %></h2>
-            <h4><%= designation %></h4>
-            <p><%= description %></p>
-
-            <div id="benefits" style="display:none;"><%= hiddendescription %></div>
-            <div id="opener"><a onclick="return show();">Read More</a></div>
-
-        </div>
-        <div class="header-image">
-            <img src= <%= avatar.image %> width= <%= avatar.width %> height= <% avatar.height %> >
+            <h4><%= home.greet %></h4>
+            <h2><%= home.name %></h2>
+            <h4><%= home.designation %></h4>
+            <p id="description"><%= home.description %></p>
+            <div><a  id="opener" onclick="show();">Read More</a></div>
         </div>
     </div>
 
@@ -62,10 +55,10 @@
         <div class="content-box">
             <h4><%= about.content.heading %></h4>
             <p><%= about.content.content %></p>
-            <a href="https://bit.ly/piyush_thapar_cv">Download CV</a>
+            <a href="../images/PiyushBangar_Thapar.pdf" download>Download CV</a>
         </div>
         <div class="image-margin">
-            <img src= <%= about.avatar %> width= <%= avatar.width %> height= <% avatar.height %> >
+            <img src= <%= about.avatar.image %> width= <%= about.avatar.width %> height= <% about.avatar.height %> >
         </div>
         <div class="progress-bar">
             <div class="bar">
@@ -128,7 +121,6 @@
         </div> 
     </div>
 
-
 <!-- -----PROJECT----- -->
     <div class="projects" id="section5">
         <div class="content">
@@ -159,43 +151,52 @@
     <div class="gallery" id="section6">
         <div class="heading">GALLERY</div>
         <div class="container">
-        <% for(let i=0; i< gallery.length; i++) { %>
-            <div class="container-one">
-                <% for(let j=0;j< 3 && i<gallery.length; j++ , i++) {   %>
-                    <img onclick="imageShow(event)" id= "gallery-item-one" src="<%= gallery[i]%>">
-                <% } %>
-            </div>
-            <div class="container-two">
-                <% for(let j = 0; j< 3 && i<gallery.length; j++, i++) { %>
-                    <img onclick="imageShow(event)" id= "gallery-item-two" src= "<%= gallery[i]%>">
-                <% } %>
-            </div>
-        <% i--; } %>
+            <% for(let i=0; i< gallery.length; i++) { %>
+                <div class="container-one">
+                    <% for(let j=0;j< 3 && i<gallery.length; j++ , i++) {   %>
+                        <img onclick="imageShow(event)" id="gallery-item-one" src="<%= gallery[i]%>">
+                        <% } %>
+                </div>
+                <div class="container-two">
+                    <% for(let j = 0; j< 3 && i<gallery.length; j++, i++) { %>
+                        <img onclick="imageShow(event)" id="gallery-item-two" src="<%= gallery[i]%>">
+                        <% } %>
+                </div>
+                <% i--; } %>
         </div>
         <div id="id01" class="modal">
-        <div class="modal-content">
-        <div class="container">
-            <span onclick="hideModal()" id="modal-btn">&times;</span>
-            <img id="modal-image">
-        </div>
-        </div>
+            <div class="modal-content">
+                <div class="container">
+                    <span onclick="hideModal()" id="modal-btn">&times;</span>
+                    <img id="modal-image">
+                </div>
+            </div>
         </div>
 
     </div>
-
 
 
 <!-- -----TESTIMONIAL----- -->
-    <div class="testimonial" id="section7">
+    <div class= "testimonial" id="section7"> 
         <h3 class="heading"><%= testimonial.heading %></h3>
-        <div class="outer-container">
-            <div class="container">
-                <%- testimonial.htmlcontent %>
-            </div>
-            <%- testimonial.htmlids %>
-        </div>
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+                    <% for(let i = 0 ; i< testimonial.imgs.length; i++) { %>
+                        <div class="grid-container">
+                            <div class="grid-elements">            
+                                <div class="grid-elements-left fade">
+                                        <img src="<%- testimonial.imgs[i]%>" no-repeat alt="Image">
+                                </div>
+                                <div class="grid-elements-right fade">
+                                    <p>
+                                        <%= testimonial.content[i] %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
     </div>
-
 
 <!-- -----CONTACT----- -->
     <div class="contact" id="section8">
@@ -218,31 +219,35 @@
 
             <div class="form-box">
                 <h4>Get In Touch</h4>
-                <form action="#" method="post" action="/resume">
+                <div>
                 <div class="form-elem">
                     <label><i id="form-name" aria-hidden="true"></i> Name</label>
-                    <input type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required>
+                    <input id="inp-form-name" type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required>
                     
                     <label><i id="form-email" aria-hidden="true"></i>Email</label>
-                    <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required>
+                    <input id="inp-form-email" type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required>
                     
                     <label><i id="form-phone" aria-hidden="true"></i>Phone</label>
-                    <input type="text" name="Phone" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}" required>
+                    <input id="inp-form-phone" type="text" name="Phone" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}" required>
                     
                     <label><i id="form-message" aria-hidden="true"></i>Message</label>
-                    <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required>Message...</textarea>
-                    <input type="submit" value="Submit" id="submit-form">
+                    <textarea id="inp-form-message" name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required>Message...</textarea>
+                    <button id="submit-form">Submit</button>
+
+                    <div id="notify-box" style="display: none"></div>
                 </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>    
 
     
 
+
+
 </div>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-<script src="../javascript/javascript.js"></script>
+<script src="../javascript/javascript.js"></script> 
 
 </body>
 
