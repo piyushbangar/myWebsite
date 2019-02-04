@@ -166,5 +166,9 @@
         "../images/g1.jpeg",
         "../images/g6.jpeg",
         "../images/g3.jpeg"
-    ]
+    ],
+    "footer": {
+        "content": "Feel free to contact me",
+        "linkedin": "https://in.linkedin.com/in/piyushbangar39"
+    }
 }
