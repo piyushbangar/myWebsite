@@ -1,0 +1,153 @@
+home {
+    background-image: url(dn2.jpg);
+    filter: grayscale(100%);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    /*z-index: -1;*/
+}
+
+.home::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.inside_home {
+    padding-left: 92px;
+    padding-right: 92px;
+    margin: 0;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    /* font-family: open sans-serif; */
+    font-weight: 700;
+    font-size: 2em;
+    position: absolute;
+}
+
+h1 a span {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+
+/*.ul_div{
+    float: right;
+       color: white;
+       position: relative;
+    
+    }
+    .ul_div li{
+    display: inline;
+    text-decoration: none;
+    margin-left:10px;
+    margin-right: 10px; 
+    padding-bottom: 7px;
+    letter-spacing: 1px;
+    }
+    .ul_div li a{
+    text-decoration: none;
+    color: #fff;
+    margin-top:5px;
+    padding-bottom: 7px;
+    }
+    .ul_div .temp{
+    position: relative;	
+    }
+    
+    .ul_div li a:hover{
+    border-bottom: 2px solid;
+    color: white;
+    }
+    */
+
+.out {
+    display: flex;
+    clear: both;
+}
+
+.inner {
+    flex: 50%;
+    max-width: 50%;
+}
+
+.intro {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+    padding: 6em 0em 0em;
+}
+
+.intro h5 {
+    color: white;
+    margin: 0;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.intro h2 {
+    color: white;
+    margin: 0;
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.intro h4 {
+    color: white;
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+.intro p {
+    color: white;
+    line-height: 2em;
+    margin: 1em 0;
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 8px;
+    width: 65%;
+    text-align: justify;
+    display: inline;
+    clear: both;
+}
+
+.btn {
+    /*background: transparent;
+     border: 2px solid #fff;
+     color: black;
+     padding: 11px 35px;
+     text-align: center;
+     letter-spacing: 1px;
+     display: inline-block;
+     margin-top: 5px;
+     cursor: pointer;
+     border-radius: 16px;
+     font-weight: 600;
+     font-size: 15px;*/
+    padding: 11px 35px;
+    color: #fff;
+    background: #333;
+    border: 2px solid #333;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    border-radius: 35px;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Piyush Bangar</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Piyush Bangar's website">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+</head>
+
+<body>
+<div class="container">
+
+<!-- -----HOME----- -->
+        <div class="home" id="section1">
+        <div class="navbar">
+            <ul>
+                <% var k=0; %>
+                <% for(var i=0; i<home.content.length; i++) { %>
+                    <% if(typeof home.content[i] === 'string') { %>
+                    <li><a href= "#<%- home.ids[k] %>"><%= home.content[i] %></a></li>
+                    <% k=k+1; %>
+                    <% } %>
+                    <% if(typeof home.content[i] === 'object') { %>
+                    <li onclick="showhidenav()" id="pages-nav-item"><%= home.content[i][0] %>
+                    
+                    <ul class="hidden-item" id="pages-nav">
+                        <% for(var j=1; j<home.content[i].length; j++) { %>
+                            <li><a href= "#<%- home.ids[k] %>"><%= home.content[i][j] %></a></li>
+                            <% k=k+1; %>
+                        <% } %>
+                    </ul>
+                    </li>
+                    <% } %>
+                <% } %>
+            </ul>
+        </div>
+        <div class="header-content">
+            <h4><%= home.greet %></h4>
+            <h2><%= home.name %></h2>
+            <h4><%= home.designation %></h4>
+            <p id="description"><%= home.description %></p>
+            <div><a  id="opener" onclick="show();">Read More</a></div>
+        </div>
+    </div>
+
+<!-- -----ABOUT----- -->
+    <div class="about" id="section2">
+        <div class="heading"><%= about.heading %></div>
+        <div class="about-content">
+        <div class="content-box">
+            <h4><%= about.content.heading %></h4>
+            <p><%= about.content.content %></p>
+            <a href="../images/PiyushBangar_Thapar.pdf" download>Download CV</a>
+        </div>
+        <div class="image-margin">
+            <img src= <%= about.avatar.image %> width= <%= about.avatar.width %> height= <% about.avatar.height %> >
+        </div>
+        <div class="progress-bar">
+            <div class="bar">
+                <% for(var i=0; i<about.skills.length; i++) { %>
+                    <div class="bar-title"><%= about.skills[i].name %></div>
+                        <div id="outer-bar">
+                            <div id="inner-bar" style = "width: <%- about.skills[i].width %>%"></div>
+                        </div>
+                <% } %>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+<!-- -----SERVICES----- -->
+    <div class="services" id="section3">
+        <div class="second-box">
+        <h3 class="heading"><%= services.heading %></h3>
+        <div class="content">
+            <% for(var i=0; i<services.content.length; i++) { %>
+                <div class = 'servicedata'>
+                <i><%= services.content[i].img %></i>
+                <h3><%= services.content[i].title %></h3>
+                <p><%= services.content[i].content %></p>
+                </div>
+            <% } %> 
+        </div>
+        </div>
+    </div>        
+
+
+<!-- -----EXPERIENCE----- -->
+    <div class="experience" id="section4">
+       <h3 class="heading"><%= experience.heading %></h3>
+        <div class="content">
+            <% for(var i=0; i<experience.content.length; i++) { %>
+                <% if(i%2==0) { %>
+                    <div class="left">
+                    <div class="left-box">
+                        <h4><%= experience.content[i].title %></h4>
+                        <h5><%= experience.content[i].year %></h5>
+                    </div>
+                    <div class="left-content">
+                        <p><%= experience.content[i].content %></p>
+                    </div>
+                    </div>
+                <% } else { %>
+                    <div class="right">
+                    <div class="right-content">
+                        <p><%= experience.content[i].content %></p>
+                    </div>
+                    <div class="right-box">
+                        <h4><%= experience.content[i].title %></h4>
+                        <h5><%= experience.content[i].year %></h5>
+                    </div>
+                    </div>
+                <% } %>
+            <% } %> 
+        </div> 
+    </div>
+
+<!-- -----PROJECT----- -->
+    <div class="projects" id="section5">
+        <div class="content">
+            <% for(var i=0; i<projects.length; i++) { %>
+                <% if(i%2!==0) { %>
+                    <div class="img-top">
+                        <div class="img-top-img" style="background-image: url(<%- projects[i].img %>);background-repeat: no-repeat;background-size: cover;background-position: center;"></div>
+                        <div class="img-top-content">
+                            <h4><%= projects[i].title %></h4>
+                            <p><%= projects[i].content %></p>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="img-bottom">
+                        <div class="img-bottom-content">
+                            <h4><%= projects[i].title %></h4>
+                            <p><%= projects[i].content %></p>
+                        </div>
+                        <div class="img-bottom-img"  style="background-image: url(<%- projects[i].img %>);background-repeat: no-repeat;background-size: cover;background-position: center;"></div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div> 
+    </div>
+
+
+<!-- -----GALLERY----- -->
+    <div class="gallery" id="section6">
+        <div class="heading">GALLERY</div>
+        <div class="container">
+            <% for(let i=0; i< gallery.length; i++) { %>
+                <div class="container-one">
+                    <% for(let j=0;j< 3 && i<gallery.length; j++ , i++) {   %>
+                        <img onclick="imageShow(event)" id="gallery-item-one" src="<%= gallery[i]%>">
+                        <% } %>
+                </div>
+                <div class="container-two">
+                    <% for(let j = 0; j< 3 && i<gallery.length; j++, i++) { %>
+                        <img onclick="imageShow(event)" id="gallery-item-two" src="<%= gallery[i]%>">
+                        <% } %>
+                </div>
+                <% i--; } %>
+        </div>
+        <div id="id01" class="modal">
+            <div class="modal-content">
+                <div class="container">
+                    <span onclick="hideModal()" id="modal-btn">&times;</span>
+                    <img id="modal-image">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<!-- -----TESTIMONIAL----- -->
+    <div class= "testimonial" id="section7"> 
+        <h3 class="heading"><%= testimonial.heading %></h3>
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+                    <% for(let i = 0 ; i< testimonial.imgs.length; i++) { %>
+                        <div class="grid-container">
+                            <div class="grid-elements">            
+                                <div class="grid-elements-left fade">
+                                        <img src="<%- testimonial.imgs[i]%>" no-repeat alt="Image">
+                                </div>
+                                <div class="grid-elements-right fade">
+                                    <p>
+                                        <%= testimonial.content[i] %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+    </div>
+
+<!-- -----CONTACT----- -->
+    <div class="contact" id="section8">
+        <h3 class="heading"><%= contact.title %></h3>
+        <div class="address-bottom">
+            <div class="address">
+                <h4><%= contact.address.title %></h4>
+                <% for(var i=0; i<contact.address.list.length; i++) { %>
+                    <div class="address-head">
+                        <i class= ""></i>
+                        <h5><%= contact.address.list[i].title %></h5>
+                        <div class="address-value">
+                            <% for(var j=0; j<contact.address.list[i].content.length; j++) { %>
+                            <a><%= contact.address.list[i].content[j] %></a>
+                            <% } %> 
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="form-box">
+                <h4>Get In Touch</h4>
+                <div>
+                <div class="form-elem">
+                    <label><i id="form-name" aria-hidden="true"></i> Name</label>
+                    <input id="inp-form-name" type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required>
+                    
+                    <label><i id="form-email" aria-hidden="true"></i>Email</label>
+                    <input id="inp-form-email" type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required>
+                    
+                    <label><i id="form-phone" aria-hidden="true"></i>Phone</label>
+                    <input id="inp-form-phone" type="text" name="Phone" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}" required>
+                    
+                    <label><i id="form-message" aria-hidden="true"></i>Message</label>
+                    <textarea id="inp-form-message" name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required>Message...</textarea>
+                    <button id="submit-form">Submit</button>
+
+                    <div id="notify-box" style="display: none"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    
+<!-- -----FOOTER----- -->
+    <div class="footer capp">
+        <div class="content catt">
+            <%= footer.content %>
+        </div>
+        <div class="icons catt">
+            <a href="<%- footer.linkedin %>"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+
+
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script src="../javascript/javascript.js"></script> 
+
+</body>
+
+</html>
